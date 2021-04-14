@@ -1,0 +1,447 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $typeKumbh;
+  background-color: $lightGrey;
+}
+
+.light-theme {
+  background-color: $lightGrey;
+
+  .form-control-brand,
+  .form-control-location,
+  form {
+    background-color: $white;
+    color: $midnight;
+
+    .form-control-brand,
+    .form-control-location {
+      border-right: 1px solid $grey;
+    }
+    label {
+      color: $midnight;
+    }
+  }
+
+  .job {
+    background-color: $white;
+
+    .job-logo {
+      border: 1px solid $lightGrey;
+    }
+
+    .job-time-type,
+    .job-company {
+      color: $darkGrey;
+    }
+    .job-title {
+      color: $midnight;
+    }
+  }
+
+  .modal-container {
+    background-color: $lightGrey;
+    color: $midnight;
+
+    .modal-job-time-type,
+    .modal-job-company {
+      color: $darkGrey;
+    }
+
+    .modal-job-title {
+      color: $midnight;
+    }
+  }
+}
+
+.dark-theme {
+  background-color: $midnight;
+
+  .form-control-brand,
+  .form-control-location,
+  form {
+    background-color: $veryDarkBlue;
+    color: $white;
+
+    .form-control-brand,
+    .form-control-location {
+      border-right: 1px solid $darkGrey;
+    }
+    label {
+      color: $white;
+    }
+  }
+
+  .job {
+    background-color: $veryDarkBlue;
+
+    // .job-container {
+    //   border: 1px solid $white;
+    // }
+    .job-time-type {
+      color: $lightViolet;
+    }
+    .job-title {
+      color: $white;
+    }
+    .job-company {
+      color: $lightViolet;
+    }
+  }
+
+  .modal-container {
+    background-color: $veryDarkBlue;
+    color: $white;
+
+    .modal-job-time-type,
+    .modal-job-company {
+      color: $lightViolet;
+    }
+
+    .modal-job-title {
+      color: $white;
+    }
+
+    .modal-job-logo {
+      border: 1px solid $white;
+    }
+  }
+}
+
+.background-pattern {
+  background-image: url("../dist/assets/mobile/bg-pattern-header.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100% 8.5rem;
+  height: 8.5rem;
+  // z-index: -99;
+
+  @include breakpoint-up(medium) {
+    background-image: url("../dist/assets/tablet/bg-pattern-header.svg");
+    background-size: 100% 10rem;
+    height: 10rem;
+  }
+
+  @include breakpoint-up(large) {
+    background-image: url("../dist/assets/desktop/bg-pattern-header.svg");
+    background-position: left;
+    background-size: 100% 9.125rem;
+    height: 9.125rem;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  @include breakpoint-up(medium) {
+    margin-bottom: 2.625rem;
+  }
+
+  @include breakpoint-up(large) {
+    margin-bottom: 2.8125rem;
+  }
+
+  .logo {
+    font-size: $fontLogo;
+    color: $white;
+    font-weight: map-get($fontWeights, "bold");
+  }
+
+  .toggle-switch-container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Icons **********************
+
+.sun-icon {
+  margin-right: 1rem;
+  height: 1.375rem;
+  width: 1.375rem;
+}
+
+.moon-icon {
+  margin-left: 1rem;
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+.filter-icon {
+  position: absolute;
+  margin-left: -5rem;
+}
+
+.search-icon {
+  position: absolute;
+  z-index: 1;
+  top: 1.8125rem;
+  color: $violet;
+
+  @include breakpoint-up(medium) {
+    padding-left: 1.5rem;
+  }
+
+  @include breakpoint-up(large) {
+    padding-left: 2rem;
+  }
+}
+
+.location-icon {
+  position: absolute;
+  z-index: 1;
+  top: 1.8125rem;
+  color: $violet;
+
+  @include breakpoint-up(medium) {
+    padding-left: 1.5rem;
+  }
+}
+
+.search-reset-btn {
+  position: relative;
+  height: 3rem;
+  width: 5rem;
+  background-color: $violet;
+  border: none;
+  border-radius: 5px;
+  color: $white;
+  font-weight: map-get($fontWeights, "regular");
+  font-size: $fontBody;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.589);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover:before {
+    opacity: 0.4;
+  }
+
+  @include breakpoint-up(medium) {
+    margin-left: 1.8125rem;
+    width: 5rem;
+  }
+
+  @include breakpoint-up(large) {
+    margin-left: 1.625rem;
+    width: 7.6875rem;
+  }
+}
+
+.full-time-only {
+  vertical-align: middle;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 3px;
+  // background-color: $darkGrey;
+  font-size: $fontBody;
+  cursor: pointer;
+
+  @include breakpoint-up(medium) {
+    margin-left: 1.3125rem;
+    margin-right: 1.125rem;
+  }
+
+  @include breakpoint-up(large) {
+    margin-left: 2.0625rem;
+    margin-right: 1.0625rem;
+  }
+}
+
+.form {
+  position: relative;
+  // background-color: $white;
+  width: 20.4375rem;
+  height: 5rem;
+  border-radius: 6px;
+
+  @include breakpoint-up(medium) {
+    width: 43.0625rem;
+    margin: 0 auto 4.375rem auto;
+  }
+
+  @include breakpoint-up(large) {
+    width: 69.375rem;
+    margin-bottom: 4.0625rem;
+  }
+
+  label {
+    font-weight: map-get($fontWeights, "bold");
+  }
+
+  .form-control-brand {
+    position: relative;
+    border: none;
+    // border-right: 1px solid $lightGrey;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    width: 20.4375rem;
+    height: 5rem;
+    padding-left: 1.5625rem;
+    cursor: pointer;
+
+    @include breakpoint-up(medium) {
+      width: 13.9375rem;
+      padding-left: 4.0625rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 29rem;
+      padding-left: 4.5625rem;
+    }
+  }
+  .form-control-location {
+    border: none;
+    // border-right: 1px solid $lightGrey;
+    width: 13.4375rem;
+    height: 5rem;
+    padding-left: 3.6875rem;
+    cursor: pointer;
+
+    @include breakpoint-up(medium) {
+      width: 13.4375rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 18.875rem;
+    }
+  }
+  .form-control-check {
+    position: absolute;
+    border: none;
+    // border-radius: 6px;
+    width: 15.8125rem;
+    height: 5rem;
+    padding-left: 1.5625rem;
+    cursor: pointer;
+
+    @include breakpoint-up(medium) {
+      width: 15.8125rem;
+    }
+
+    @include breakpoint-up(large) {
+      width: 20.625rem;
+    }
+  }
+}
+
+.container {
+  padding: 2rem 1.4375rem 0 1.4375rem;
+
+  @include breakpoint-up(medium) {
+    padding: 2.5625rem 2.4375rem 0 2.4375rem;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 2.8125rem 10.3125rem 0 10.3125rem;
+  }
+}
+
+.prompt {
+  display: grid;
+  margin: 0 auto;
+
+  .prompt-title {
+    color: $violet;
+    font-size: 3rem;
+  }
+}

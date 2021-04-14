@@ -1,0 +1,153 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  transition: opacity 150ms ease-in-out;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.show-modal {
+  visibility: visible;
+  z-index: 10;
+}
+.modal-container {
+  border-radius: 6px;
+  width: 95vw;
+  height: 90vh;
+  overflow: scroll;
+  text-align: center;
+  // display: grid;
+  place-items: center;
+  position: relative;
+
+  @include breakpoint-up(medium) {
+    width: 43.0625rem;
+  }
+
+  @include breakpoint-up(large) {
+    width: 45.625rem;
+  }
+
+  .close-modal-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: $violet;
+    cursor: pointer;
+  }
+
+  .markdown {
+    padding: 1rem 3rem 1rem 3rem;
+    text-align: left;
+    font-size: $fontH4;
+    margin: 0 auto;
+
+    h2 {
+      margin: 1rem auto;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoint-up(medium) {
+      width: 37.0625rem;
+    }
+  }
+
+  .modal-header {
+    text-align: center;
+    margin-top: 1rem;
+
+    @include breakpoint-up(medium) {
+      width: 86%;
+    }
+
+    @include breakpoint-up(large) {
+      width: 92%;
+    }
+  }
+
+  .modal-job-logo {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 15px;
+    margin: 1rem auto;
+  }
+
+  .modal-job-time-type {
+    font-size: $fontBody;
+    font-weight: map-get($fontWeights, "light");
+    margin-bottom: 1rem;
+  }
+
+  .modal-job-location {
+    font-size: $fontBody;
+    // color: $violet;
+    font-weight: map-get($fontWeights, "bold");
+    margin-bottom: 2.5rem;
+  }
+
+  .modal-job-title {
+    font-size: $fontH3;
+    margin-bottom: 1rem;
+  }
+
+  .modal-job-company {
+    font-size: $fontBody;
+    font-weight: map-get($fontWeights, "regular");
+    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+
+    a:link {
+      color: $violet;
+    }
+    a:visited {
+      color: $violet;
+    }
+  }
+
+  .modal-footer {
+    text-align: left;
+
+    p {
+      color: $white;
+      font-size: $fontH4;
+
+      @include breakpoint-up(medium) {
+        padding-left: 6rem;
+      }
+
+      @include breakpoint-up(large) {
+        padding-left: 6rem;
+      }
+    }
+
+    h2 {
+      padding: 1.2rem 1.2rem 1.2rem 6rem;
+      font-size: $fontH2;
+      color: $white;
+    }
+
+    @include breakpoint-up(medium) {
+      background: url("../dist/assets/desktop/bg-pattern-detail-footer.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 12rem;
+    }
+
+    @include breakpoint-up(large) {
+      background: url("../dist/assets/desktop/bg-pattern-detail-footer.svg");
+    }
+  }
+}

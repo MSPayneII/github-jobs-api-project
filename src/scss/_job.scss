@@ -1,0 +1,129 @@
+.job-list {
+  display: grid;
+  margin: 0 auto;
+
+  @include breakpoint-up(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4.0625rem;
+    column-gap: 0.6875rem;
+    max-width: 43.0625rem;
+  }
+
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.875rem;
+    max-width: 69.375rem;
+  }
+}
+
+.job {
+  position: relative;
+  // background-color: $white;
+  border-radius: 6px;
+  height: 19.25rem;
+  cursor: pointer;
+
+  @include breakpoint-up(medium) {
+    width: 21.1875rem;
+  }
+
+  @include breakpoint-up(large) {
+    width: 21.875rem;
+  }
+
+  .logo-container {
+    position: absolute;
+    height: 3.125rem;
+    width: 3.125rem;
+    background-color: $white;
+    text-align: center;
+    margin-left: 2rem;
+    border-radius: 15px;
+    top: -1.5rem;
+  }
+
+  .job-text-container {
+    @include breakpoint-up(medium) {
+      padding: 3.0625rem 2rem 2.25rem 2rem;
+      //   width: 16.875rem;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 3.0625rem 2.125rem 2.5rem 2.125rem;
+    }
+  }
+
+  .job-logo {
+    height: 3.125rem;
+    width: 3.125rem;
+    border-radius: 15px;
+    // border: 1px solid $lightGrey;
+  }
+
+  .job-time-type {
+    // color: $darkGrey;
+    font-size: $fontH4;
+    font-weight: map-get($fontWeights, "light");
+    margin-bottom: 1.25rem;
+  }
+  .job-title {
+    // color: $midnight;
+    font-size: $fontBody;
+    font-weight: map-get($fontWeights, "bold");
+    margin-bottom: 1.375rem;
+
+    // &:hover {
+    //   color: $darkGrey;
+    // }
+  }
+  .job-company {
+    // color: $darkGrey;
+    font-size: $fontH4;
+    font-weight: map-get($fontWeights, "light");
+    margin-bottom: 2rem;
+  }
+
+  .job-location {
+    font-size: $fontH4;
+    color: $violet;
+    font-weight: map-get($fontWeights, "bold");
+    margin-bottom: 2.5rem;
+  }
+
+  .view-details-btn {
+    position: relative;
+    background-color: $violet;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    font-weight: map-get($fontWeights, "regular");
+    font-size: $fontBody;
+    cursor: pointer;
+
+    @include breakpoint-up(medium) {
+      height: 2.5rem;
+      width: 8rem;
+    }
+
+    @include breakpoint-up(large) {
+      height: 2rem;
+      width: 8rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.589);
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover:before {
+      opacity: 0.4;
+    }
+  }
+}
