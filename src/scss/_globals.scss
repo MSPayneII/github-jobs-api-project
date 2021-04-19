@@ -353,6 +353,7 @@ body {
   width: 20.4375rem;
   height: 5rem;
   border-radius: 6px;
+  margin: 0 auto 3.5625rem auto;
 
   @include breakpoint-up(medium) {
     width: 43.0625rem;

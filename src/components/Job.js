@@ -19,15 +19,19 @@ const Job = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // OpenModal handles having the modal appear when a user clicks the "view details" button
   const openModal = () => {
     setIsModalOpen(true);
     // console.log("pressed");
   };
 
+  // OpenModal handles removing the modal when a user clicks the "view details" button
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  // removes access words/characters from a job title
   const shortenTitle = (obj) => {
     const newTitle = [];
     const titleValue = Object.values(obj).join();
@@ -43,6 +47,7 @@ const Job = ({
     return newTitle.join("");
   };
 
+  // handles the time functionality that informs the user how long ago a job posting was created. This will display on a job card
   const timeSincePosting = (current, previous) => {
     const newPrevious = Object.values(previous).join();
     // console.log(newCurrent);

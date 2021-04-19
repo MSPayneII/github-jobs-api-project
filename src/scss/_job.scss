@@ -1,6 +1,11 @@
+// This code is for the styling of a job card and all elements within that card
+
 .job-list {
   display: grid;
+  row-gap: 3rem;
   margin: 0 auto;
+  min-width: 20.4375rem;
+  justify-content: center;
 
   @include breakpoint-up(medium) {
     grid-template-columns: repeat(2, 1fr);
@@ -22,6 +27,7 @@
   border-radius: 6px;
   height: 19.25rem;
   cursor: pointer;
+  width: 20.4375rem;
 
   @include breakpoint-up(medium) {
     width: 21.1875rem;
@@ -43,6 +49,8 @@
   }
 
   .job-text-container {
+    padding: 3.0625rem 2.0625rem 2.375rem 2.3125rem;
+
     @include breakpoint-up(medium) {
       padding: 3.0625rem 2rem 2.25rem 2rem;
       //   width: 16.875rem;

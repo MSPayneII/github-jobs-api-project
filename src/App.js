@@ -17,6 +17,8 @@ function App() {
 
   // console.log(jobs);
 
+  // handleParamChange is a function that takes user input and updates the parameters used in the useFetchJobs function. The parameters allow the user to filter api results based on what they enter in the search bar.
+
   const handleParamChange = (e) => {
     const param = e.target.name;
     const value = e.target.value;
@@ -26,6 +28,7 @@ function App() {
     });
   };
 
+  //ThemeChange is a function that handles adding theme classes to the body element
   const themeChange = () => {
     setIsChecked(!isChecked);
     const body = document.querySelector("body");

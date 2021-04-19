@@ -3,26 +3,9 @@ import SunIcon from "../dist/assets/desktop/icon-sun.svg";
 import MoonIcon from "../dist/assets/desktop/icon-moon.svg";
 import Switch from "react-switch";
 
+// This component is for the logo and theme switch at the top of the application
+
 const Header = ({ themeChange, isChecked }) => {
-  // const [isChecked, setIsChecked] = useState(false);
-
-  // const themeChange = () => {
-  //   setIsChecked(!isChecked);
-  //   const body = document.querySelector("body");
-
-  //   if (isChecked) {
-  //     body.classList.remove("dark-theme");
-  //     body.classList.add("light-theme");
-  //   } else {
-  //     body.classList.remove("light-theme");
-  //     body.classList.add("dark-theme");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   setIsChecked(isChecked);
-  // }, []);
-
   return (
     <div className="header container">
       <h1 className="logo">devjobs</h1>

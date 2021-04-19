@@ -4,6 +4,7 @@ import locationIcon from "../dist/assets/desktop/icon-location.svg";
 // import Button from "./Button";
 // import Job from "../../src/components/Job";
 
+// SearchForm is meant to adjust the display of the search form based on viewport height
 const SearchForm = ({ params, onParamChange }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
